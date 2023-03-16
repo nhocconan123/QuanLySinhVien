@@ -27,8 +27,17 @@ public class Main {
         List<Students> studentsList=new ArrayList<>();
         System.out.printf("%-20s %-20s %-20s %-20s", "ma sinh vien", "ten sinh vien", "gioi tinh", "dia chi");
         for (Students st:studentDOA.getAll1()) {
-            System.out.println(st);
-            System.out.printf("%-20s %-20s %-20d %-20s\n", (st.getId()), st.getFull_name(),st.getGender(),st.getAddress());
+            System.out.println();
+            String gioitinh;
+            if(st.getGender()==1)
+            {
+                gioitinh="nu";
+            }
+            else
+            {
+                gioitinh="nam";
+            }
+            System.out.printf("%-20s %-20s %-20s %-20s\n", (st.getId()), st.getFull_name(),gioitinh,st.getAddress());
         }
     }
     public static void option2(Scanner sc)
